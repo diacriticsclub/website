@@ -65,7 +65,10 @@ gulp.task('js', function () {
     return gulp.src(['./src/assets/js/app.js'])
         .pipe(bro({
             transform: [
-                babelify.configure({ presets: ['env'] })
+                babelify.configure({
+                    presets: ['env'],
+                    plugins: ['transform-object-rest-spread']
+                })
             ]
         }))
         .pipe(gulp.dest('./dist/assets'))
@@ -76,7 +79,10 @@ gulp.task('js-prod', function () {
     return gulp.src(['./src/assets/js/app.js'])
         .pipe(bro({
             transform: [
-                babelify.configure({ presets: ['env'] }),
+                babelify.configure({
+                    presets: ['env'],
+                    plugins: ['transform-object-rest-spread']
+                }),
                 ['uglifyify', { global: true }]
             ]
         }))
