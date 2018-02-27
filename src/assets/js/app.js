@@ -43,7 +43,7 @@ if (document.getElementsByTagName('body')[0].classList.contains('rsvp')) {
                 throw new Error('Sorry, we have not been able to process your RSVP.')
             }
 
-            let message = "Thank you for letting us know that you're coming, we're looking forward to see you."
+            let message = "Thank you for letting us know that you're coming, we're looking forward to seeing you."
 
             if (rsvp === 0) {
                 message = "Thank you for letting us know that you won't be coming. See you next time hopefully!"
