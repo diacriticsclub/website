@@ -35,7 +35,7 @@ if (document.getElementsByTagName('body')[0].classList.contains('rsvp')) {
                 params: {
                     ...baseEmailParams,
                     email,
-                    field_march_2018: rsvp
+                    field_april_2018: rsvp
                 }
             })
 
@@ -43,10 +43,10 @@ if (document.getElementsByTagName('body')[0].classList.contains('rsvp')) {
                 throw new Error('Sorry, we have not been able to process your RSVP.')
             }
 
-            let message = "Thank you for letting us know that you're coming, we're looking forward to seeing you."
+            let message = 'Thank you for letting us know that you’re coming, we’re looking forward to seeing you.'
 
             if (rsvp === 0) {
-                message = "Thank you for letting us know that you won't be coming. See you next time hopefully!"
+                message = 'Thank you for letting us know that you won’t be coming. See you next time hopefully!'
             }
             else if (rsvp === 1) {
                 message = 'Thank you for letting us know that you might be coming.'
@@ -70,18 +70,18 @@ if (document.getElementsByTagName('body')[0].classList.contains('rsvp')) {
 else {
     form.addEventListener('submit', async (ev) => {
         ev.preventDefault()
-    
+
         if (!submitting) {
             submitting = true
             form.classList.remove('error')
             form.classList.add('submitting')
-    
+
             try {
                 const email = emailField.value
                 const emailParts = email.split(/@/)
                 const domain = emailParts[1] || ''
                 const extension = domain.split('.')
-    
+
                 if (!email) {
                     throw new Error('Oh no! There doesn’t seem to be an email there...')
                 }
@@ -91,18 +91,18 @@ else {
                 else if (Domains.includes(domain)) {
                     throw new Error('Oh no! Your email appears to come from a spam domain. Better double check.')
                 }
-    
+
                 const { data } = await Axios.get('https://api.elasticemail.com/v2/contact/add', {
                     params: {
                         ...baseEmailParams,
                         email
                     }
                 })
-    
+
                 if (!data.success) {
                     throw new Error('Oh no! Our mailing list seems to be having a little crisis. Try again maybe?')
                 }
-    
+
                 form.classList.add('success')
             }
             catch (err) {
