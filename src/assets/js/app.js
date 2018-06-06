@@ -35,7 +35,7 @@ if (document.getElementsByTagName('body')[0].classList.contains('rsvp')) {
                 params: {
                     ...baseEmailParams,
                     email,
-                    field_april_2018: rsvp
+                    field_june_2018: rsvp
                 }
             })
 
