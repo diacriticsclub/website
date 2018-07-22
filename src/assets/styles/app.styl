@@ -1,5 +1,5 @@
 // @import url("/count/35bace")
-@import 'rupture'
+@import '../../../node_modules/rupture/index.styl'
 
 @import 'reset'
 @import 'typography'
@@ -129,11 +129,6 @@ form, input, button, label
 
 form
 	display: block
-	margin-bottom: space-6
-
-	&.submitting
-		button
-			transform: translateY(-0.5rem) rotate(90deg)
 
 	&.success
 		.input-wrapper
@@ -152,14 +147,41 @@ form
 			&.error
 				animation: show 0.5s ease forwards
 
-	.input-wrapper
-		display: flex
-		transform: translate3d(0, 0, 0)
-		backface-visibility: hidden
-		perspective: 1000px
-		border-bottom: 2px solid black
-		transition: border-bottom 0.5s ease
-		overflow: hidden
+	&#email-subscription
+		margin-bottom: space-6
+
+		&.submitting
+			button
+				transform: translateY(-0.5rem) rotate(90deg)
+
+		.input-wrapper
+			display: flex
+			transform: translate3d(0, 0, 0)
+			backface-visibility: hidden
+			perspective: 1000px
+			border-bottom: 2px solid black
+			transition: border-bottom 0.5s ease
+			overflow: hidden
+
+		label
+			margin-bottom: space-3
+			display: block
+
+		button
+			padding: 0
+			padding-right: 0.5rem
+			padding-left: 1rem
+			flex-shrink: 0
+			font-size: size-4 * 1.2
+			transition: transform 0.5s ease
+			transform: translateX(0)
+			pointer: cursor
+
+			&:hover
+				transform: translateX(0.4rem)
+
+			&:active
+				transform: translateX(0.7rem)
 	
 	button, input
 		font-size: size-4
@@ -169,24 +191,7 @@ form
 		font-family: BodyFace
 
 	button
-		padding: 0
-		padding-right: 0.5rem
-		padding-left: 1rem
-		flex-shrink: 0
-		font-size: size-4 * 1.2
-		transition: transform 0.5s ease
-		transform: translateX(0)
 		pointer: cursor
-
-		&:hover
-			transform: translateX(0.4rem)
-		
-		&:active
-			transform: translateX(0.7rem)
-
-	label
-		margin-bottom: space-3
-		display: block
 
 	input
 		padding: space-1 0
@@ -202,3 +207,67 @@ form
 	
 .red
 	color: red
+
+#family-steps
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	margin-bottom: space-5
+
+	.input-wrapper
+		margin-right: space-3
+		font-size: size-6
+
+		label
+			opacity: 0.5
+	
+	button
+		font-size: size-6
+		text-transform: uppercase
+		border: 2px solid black
+		border-radius: 2px
+		padding: space-1 space-3
+		flex: 0 0 auto
+		transition: background 0.3s ease, color 0.3s ease
+
+		span
+			display: inline-block
+			transition: transform 0.3s ease
+
+		&:hover
+			span
+				transform: translateX(space-2)
+
+	input
+		border-bottom: 2px solid black
+		margin-bottom: space-2
+
+.result
+	margin-bottom: space-5
+
+	ul
+		display: flex
+		justify-content: flex-start
+		align-items: flex-end
+
+		li
+			margin-right: 1rem
+			flex: 0 0 auto
+			display: flex
+			flex-direction: column
+			align-items: center
+			position: relative
+			
+			.value
+				padding-top: space-1
+				font-size: size-6 * 0.8
+				color: red
+				position: absolute
+				bottom: -1.25rem
+
+			.bar
+				background: black
+	
+#credits
+	font-size: 1rem
+	padding-top: space-5

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Family Stem Weights Calculator — Diacritics Club</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta content="telephone=no" name="format-detection">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-13023336-5"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-13023336-5');
+	</script>
+
+	<link rel="stylesheet" href="./assets/styles/app.styl">
+</script>
+
+</head>
+<body>
+	<main>
+		<h1>Family Stem Weights Calculator</h1>
+
+		<p class="intro">Use this calculator to work out the weight progression of your typeface. Use these values as a starting point, refine and tweak as needed.</p>
+
+		<form id="family-steps">
+			<div class="input-wrapper">
+				<input id="start-value" value="20"> 
+				<label for="start-value">Start Weight</label>
+			</div>
+
+			<div class="input-wrapper">
+				<input id="end-value" value="220"> 
+				<label for="end-value">End Weight</label>
+			</div>
+
+			<div class="input-wrapper">
+				<input id="nb-steps" value="9">
+				<label for="nb-steps">Steps</label>
+			</div>
+
+			<button type="submit">Calculate <span>☞</span></button>
+		</form>
+
+		<div class="result linear">
+			<h2>Linear progression</h2>
+			<ul>
+
+			</ul>
+		</div>
+
+		<div class="result lucas">
+			<h2>Luc(as) progression</h2>
+			<ul>
+
+			</ul>
+		</div>
+
+		<div class="result impallari">
+			<h2>Impallari progression</h2>
+			<ul>
+
+			</ul>
+		</div>
+
+		<div id="credits">
+			<p>
+				Based on Pablo Impallari's <a href="https://web.archive.org/web/20170721200038/http://www.impallari.com:80/familysteps/index.php" target="_blank">Family Stem Weights Calculator</a>, currently offline. Pablo's formula is an average between a linear progression and <a href="https://www.lucasfonts.com/about/interpolation-theory/" target="_blank">Luc(as) de Groot's formula</a>.
+			</p>
+
+			<p>This is a project from <a href="/">Diacritics Club</a>, a casual type meetup in London.</p>
+		</div>
+	</main>
+
+	<footer>
+		<div>hello@diacritics.club</div>
+		<a href="https://join.slack.com/t/diacriticsclub/shared_invite/enQtMzE1MTQ4OTExNzgwLTgyYjk4Yzk1ZmM2MzJlYzhhOWRkYWVlZTA3MjA4MTRmN2I5ZGJlY2RlZDJmZjIxZjAxNzYwODhhMzVkNDA5OTQ" target="_blank">Slack</a>
+		<a href="https://www.twitter.com/diacriticsclub" target="_blank">Twitter</a>
+		<a href="https://www.readvisions.com/privacy" target="_blank">Privacy Policy</a>
+	</footer>
+
+	<script async src="./assets/js/steps.js"></script>
+</body>
+</html>

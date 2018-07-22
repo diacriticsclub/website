@@ -1,6 +1,6 @@
+import 'babel-polyfill'
 import Axios from 'axios'
 import Domains from './domains'
-require('babel-polyfill')
 
 const form = document.getElementById('email-subscription')
 const emailField = document.getElementById('email')
