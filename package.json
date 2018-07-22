@@ -1,7 +1,6 @@
 {
   "name": "diacriticsclub",
   "version": "1.0.0",
-  "main": "gulpfile.js",
   "private": true,
   "engines": {
     "node": "8.4.x",
