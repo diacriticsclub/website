@@ -89,6 +89,9 @@ h1
 	.kern
 		letter-spacing: -0.025em
 
+	+below(400px)
+		font-size: size-2 * 0.9
+
 h2
 	font-size: size-3
 	text-transform: uppercase
@@ -221,6 +224,12 @@ form
 		label
 			opacity: 0.5
 	
+	+below(400px)
+		flex-direction: column
+
+		.input-wrapper
+			margin-bottom: space-3
+	
 	button
 		font-size: size-6
 		text-transform: uppercase
@@ -267,6 +276,34 @@ form
 
 			.bar
 				background: black
+			
+				&.vertical
+					display: block
+
+				&.horizontal
+					display: none
+		
+		+below(400px)
+			flex-direction: column
+			align-items: flex-start
+			justify-content: flex-start
+
+			li
+				margin-right: 0
+				margin-bottom: 1rem
+				flex-direction: row-reverse
+				padding-left: 2rem
+
+				.bar.vertical
+					display: none
+				
+				.bar.horizontal
+					display: block
+
+				.value
+					position: absolute
+					bottom: auto
+					left: 0rem
 	
 #credits
 	font-size: 1rem

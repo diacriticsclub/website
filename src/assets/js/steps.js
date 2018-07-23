@@ -21,9 +21,9 @@ const calculate = () => {
     $('.result ul').html('')
 
     weights.forEach(({ linear, lucas, impallari }) => {
-        $('.result.linear ul').append(`<li><div class="bar" style="width: ${linear/5}px; height: ${linear}px;"></div> <div class="value">${linear}</div></li>`)
-        $('.result.lucas ul').append(`<li><div class="bar" style="width: ${lucas/5}px; height: ${lucas}px;"></div> <div class="value">${lucas}</div></li>`)
-        $('.result.impallari ul').append(`<li><div class="bar" style="width: ${impallari/5}px; height: ${impallari}px;"></div> <div class="value">${impallari}</div></li>`)
+        $('.result.linear ul').append(`<li><div class="bar horizontal" style="height: ${linear/5}px; width: ${linear}px;"></div> <div class="bar vertical" style="width: ${linear/5}px; height: ${linear}px;"></div> <div class="value">${linear}</div></li>`)
+        $('.result.lucas ul').append(`<li><div class="bar horizontal" style="height: ${lucas/5}px; width: ${lucas}px;"></div> <div class="bar vertical" style="width: ${lucas/5}px; height: ${lucas}px;"></div> <div class="value">${lucas}</div></li>`)
+        $('.result.impallari ul').append(`<li><div class="bar horizontal" style="height: ${impallari/5}px; width: ${impallari}px;"></div> <div class="bar vertical" style="width: ${impallari/5}px; height: ${impallari}px;"></div> <div class="value">${impallari}</div></li>`)
     })
 }
 
